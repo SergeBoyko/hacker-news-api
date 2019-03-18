@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import StoryList from "./container/StoryList";
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import axios from "axios";
 
 class App extends Component {
+  state = {
+    allIdtories: [19388049]
+  };
+
+  // getAllStories = () => {
+  //   axios
+  //     .get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
+  //     .then(response => {
+  //       const tenStories = response.data.slice(0, 10);  ////  Here is limit by 10 story
+  //       this.setState({ allIdtories: tenStories });
+  //     })
+  //     .catch(function(error) {
+  //       console.log(error);
+  //     });
+  // };
+
+  // componentDidMount() {
+  //   this.getAllStories();
+  // }
+
   render() {
+    const { allIdtories } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <StoryList allIdtories={allIdtories} />
       </div>
     );
   }
