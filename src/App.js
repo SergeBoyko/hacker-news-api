@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import StoryList from "./container/StoryList";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import axios from "axios";
+//import axios from "axios";
 
 class App extends Component {
   state = {
-    allIdtories: [19388049]
+    allIdtories: [19389693, 9129199]
   };
 
   // getAllStories = () => {
   //   axios
   //     .get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
   //     .then(response => {
-  //       const tenStories = response.data.slice(0, 10);  ////  Here is limit by 10 story
+  //       const tenStories = response.data.slice(0, 3);
   //       this.setState({ allIdtories: tenStories });
   //     })
   //     .catch(function(error) {
