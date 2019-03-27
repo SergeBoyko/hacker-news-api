@@ -2,28 +2,28 @@ import React, { Component } from "react";
 import StoryList from "./container/StoryList";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-//import axios from "axios";
+import axios from "axios";
 
 class App extends Component {
   state = {
-    allIdtories: [19389693, 9129199]
+    allIdtories: []
   };
 
-  // getAllStories = () => {
-  //   axios
-  //     .get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
-  //     .then(response => {
-  //       const tenStories = response.data.slice(0, 3);
-  //       this.setState({ allIdtories: tenStories });
-  //     })
-  //     .catch(function(error) {
-  //       console.log(error);
-  //     });
-  // };
+  getAllStories = () => {
+    axios
+      .get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
+      .then(response => {
+        const tenStories = response.data.slice(0, 5); /// Number story is here
+        this.setState({ allIdtories: tenStories });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
-  // componentDidMount() {
-  //   this.getAllStories();
-  // }
+  componentDidMount() {
+    this.getAllStories();
+  }
 
   render() {
     const { allIdtories } = this.state;

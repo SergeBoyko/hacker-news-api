@@ -1,6 +1,6 @@
 export function dataFormat(data) {
   let timestamp = data;
-  const updateDate = new Date(timestamp * 1000).toLocaleDateString();
+  const updateDate = new Date(timestamp * 1000).toString();
   return updateDate;
 }
 
@@ -14,7 +14,9 @@ export function dataFormatFromPattern(date) {
   const options = {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric"
   };
   const newDate = new Date(date);
   const formamattedDate = new Intl.DateTimeFormat("us-US", options).format(
