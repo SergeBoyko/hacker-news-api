@@ -13,7 +13,7 @@ class Comments extends Component {
 
     showComments = showComments.slice(0, 2).map(c =>
       (
-        <div key={c.id || c.text} className="card-text">
+        <div key={c.id || c.text} className="card-text" data-test="commentsComponent">
           <hr />
           <span style={{ fontWeight: "bold", color: "#333" }}>
             {c.by}
@@ -26,7 +26,7 @@ class Comments extends Component {
 
     return (
       <div>
-        <h6>Comments</h6>
+        <h6 data-test="Header">Comments</h6>
         {showComments}
       </div>
     );
