@@ -14,7 +14,8 @@ describe('Render <StroyList />', () => {
     let wrapper;
     beforeEach(() => {
         const props = {
-            allIdtories: [1]
+            allIdtories: [1],
+            kids: [1][1]
         }
         wrapper = setUp(props)
     })
