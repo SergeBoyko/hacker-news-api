@@ -1,9 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import { shallow } from 'enzyme'
+import App from "./App"
+import { findByTestAtrr } from "../Utils/index"
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+const setUp = (props = {}) => {
+    const component = shallow(<App {...props} />)
+    return component
+}
+
+
+describe('<App />', () => {
+
+    let component;
+    beforeEach(() => {
+        component = setUp();
+    })
+
+    it('Should render basic root App ', () => {
+        const wrapper = findByTestAtrr(component, 'App')
+        expect(wrapper).toHaveLength(1);
+    })
+})

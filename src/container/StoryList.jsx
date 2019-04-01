@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Story from "../components/Story";
+import Story from "../components/Story/Story";
 import axios from "axios";
 
 class StoryList extends Component {
@@ -41,10 +41,10 @@ class StoryList extends Component {
     }
 
     return (
-      <main className="container">
+      <main className="container" data-test='StroyLIst'>
         <div className="row">
           <div className="col-12">
-            <h1>Hacker News</h1>
+            <h1 data-test="Header">Hacker News</h1>
             <Story stories={stories} />
           </div>
         </div>

@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     const { allIdtories } = this.state;
     return (
-      <div className="App">
+      <div className="App" data-test='App'>
         <StoryList allIdtories={allIdtories} />
       </div>
     );
