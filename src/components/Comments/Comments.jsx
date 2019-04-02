@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Comments extends Component {
   state = {
@@ -31,6 +32,16 @@ class Comments extends Component {
       </div>
     );
   }
+}
+
+Comments.propTypes = {
+  comments: PropTypes.arrayOf(PropTypes.shape({
+    parent: PropTypes.number.isRequired,
+    id: PropTypes.number,
+    by: PropTypes.string,
+    time: PropTypes.string
+  })),
+  storyById: PropTypes.number
 }
 
 export default Comments;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import PropTypes from 'prop-types';
 import { getDateFormatUnixTime } from "../../common/getDateFormatUnixTime";
 import { sortByDate } from "../../common/sortByDate";
 import { setDateToPattern } from "../../common/setDateToPattern";
@@ -89,6 +90,16 @@ class Story extends Component {
       </div>
     ));
   }
+}
+
+Story.propTypes = {
+  stories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    by: PropTypes.string,
+    time: PropTypes.number,
+    title: PropTypes.string,
+    kids: PropTypes.arrayOf(PropTypes.number)
+  }))
 }
 
 export default Story;

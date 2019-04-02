@@ -21,8 +21,8 @@ class App extends Component {
       });
   };
 
-  componentDidMount() {
-    this.getAllStories();
+  async componentDidMount() {
+    await this.getAllStories();
   }
 
   render() {
